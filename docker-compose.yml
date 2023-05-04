@@ -2,16 +2,20 @@ version: '2'
 
 services:
   n3uron:
-    image: n3uronhub/n3uron:v1.21.4
+    build: .
     ports:
       - 80:8003   # HTTP WebUI
       - 443:8443  # HTTPS WebUI
       - 3001:3001 # Inbound Links
+    environment:
+      - HOSTNAME=balena-historian
     volumes:
       - n3_config:/opt/n3uron/config      # Persist configuration
       - n3_data:/opt/n3uron/data          # Persist data
       - n3_licenses:/opt/n3uron/licenses  # Persist N3uron licenses
       - n3_log:/opt/n3uron/log            # Persist logs
+    cap_add:
+      - SYS_ADMIN
     restart: always
 
   mongo:
