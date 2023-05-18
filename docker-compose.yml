@@ -4,18 +4,18 @@ services:
   n3uron:
     build: .
     ports:
-      - 8003:8003  # HTTP WebUI
-      - 8443:8443  # HTTPS WebUI
-      - 8004:8004  # HTTP WebVision
-      - 8444:8444  # HTTPS WebVision
-      - 3001:3001  # Inbound Links
+      - 8003:8003 # HTTP WebUI
+      - 8443:8443 # HTTPS WebUI
+      - 8004:8004 # HTTP WebVision
+      - 8444:8444 # HTTPS WebVision
+      - 3001:3001 # Inbound Links
     environment:
       - HOSTNAME=balena-historian
     volumes:
-      - n3_config:/opt/n3uron/config      # Persist configuration
-      - n3_data:/opt/n3uron/data          # Persist data
-      - n3_licenses:/opt/n3uron/licenses  # Persist N3uron licenses
-      - n3_log:/opt/n3uron/log            # Persist logs
+      - n3_config:/opt/n3uron/config
+      - n3_data:/opt/n3uron/data
+      - n3_licenses:/opt/n3uron/licenses
+      - n3_log:/opt/n3uron/log
     cap_add:
       - SYS_ADMIN
     restart: always
@@ -24,9 +24,6 @@ services:
     image: mongo:4
     ports:
       - 27017:27017
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
     volumes:
       - mongo_data:/data/db
     restart: always

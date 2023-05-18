@@ -22,6 +22,8 @@ assets:
 data:
   applicationEnvironmentVariables:
     - HOSTNAME: balena-historian
+    - MONGO_INITDB_ROOT_USERNAME: root
+    - MONGO_INITDB_ROOT_PASSWORD: n3uron
   defaultDeviceType: raspberrypi4-64
   supportedDeviceTypes:
     - raspberrypi4-64
