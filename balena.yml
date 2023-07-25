@@ -29,4 +29,4 @@ data:
     - intel-nuc
     - generic-amd64
     - genericx86-64-ext
-version: 1.21.4
+version: 1.21.5
