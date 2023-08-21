@@ -1,5 +1,6 @@
 name: N3uron Historian
 type: sw.application
+version: 1.21.6
 
 description: >-
   Historian is an affordable and easy-to-deploy solution for businesses that need to manage large volumes of time-series data.
@@ -29,4 +30,3 @@ data:
     - intel-nuc
     - generic-amd64
     - genericx86-64-ext
-version: 1.21.5
